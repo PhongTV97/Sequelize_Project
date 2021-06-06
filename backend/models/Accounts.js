@@ -22,31 +22,31 @@ const Accounts = database.define('accounts', {
     },
     access_token: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     create_time_access_token: {
         type: Sequelize.DATE,
-        allowNull: false,
+        allowNull: true,
     },
     expried_time_access_token: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
     },
     refresh_token: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     create_time_refresh_token: {
         type: Sequelize.DATE,
-        allowNull: false,
+        allowNull: true,
     },
     expried_time_refresh_token: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
     },
     role: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
     }
 });
 
