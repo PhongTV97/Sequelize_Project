@@ -35,12 +35,7 @@ export const loginService = async (email, password) => {
     const check = await Accounts.update(
       {
         access_token: gererateAccessToken,
-        create_time_access_token: Date.now(),
-        expried_time_access_token: Number(process.env.EXPRIED_ACCESS_TOKEN),
-
         refresh_token: gererateRefreshToken,
-        create_time_refresh_token: Date.now(),
-        expried_time_refresh_token: Number(process.env.EXPRIED_REFRESH_TOKEN),
       },
       {
         where: {
@@ -86,10 +81,43 @@ export const createAccService = async (email, password, role) => {
       pass_word: password,
       role,
     });
-    console.log('res', res);
     if (res) {
       return true;
     }
+  }
+  return false;
+};
+
+export const generateAccessToken = async (email) => {
+  const inforUser = await Accounts.findAll({
+    where: {
+      email: {
+        [Op.eq]: email,
+      },
+    },
+  });
+  if (inforUser.length) {
+    const access_token = jwt.sign(
+      {
+        exp: Math.floor(Date.now() / 1000) + Number(process.env.EXPRIED_ACCESS_TOKEN),
+        email,
+      },
+      process.env.PRIVATE_KEY_GENERATE_ACCESS_TOKEN
+    );
+    const checkUpdate = await Accounts.update(
+      {
+        access_token,
+      },
+      {
+        where: {
+          email: {
+            [Op.eq]: email,
+          },
+        },
+      }
+    );
+    if (checkUpdate) return access_token;
+    else return false;
   }
   return false;
 };
