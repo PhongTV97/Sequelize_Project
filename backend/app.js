@@ -8,6 +8,8 @@ import './models/index.js';
 import { syncData } from './utils/index.js';
 import database from './database/db.js';
 import router from './routes/routes.js';
+import cors from 'cors';
+import bodyParser from "body-parser";
 
 // sync data
 syncData(database);
@@ -18,14 +20,15 @@ syncData(database);
 import express from 'express';
 var app = express();
 
-app.use(express.json());
 // npm install cors
 // import cors from "cors";
-// app.use(cors);
+app.use(cors());
+
+app.use(express.json());
 
 // npm install body-parser
 // import bodyParser from "body-parser";
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 app.use('/', router);
 

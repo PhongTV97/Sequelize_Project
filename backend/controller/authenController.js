@@ -30,9 +30,13 @@ export const login = async (req, res) => {
 
 export const createAccount = async (req, res) => {
   try {
+    console.log("controller");
     const email = req.body.email;
     const password = md5(req.body.password);
     const role = req.body.role;
+    console.log("email", email);
+    console.log("password", password);
+    console.log("role", role);
     const result = await createAccService(email, password, role);
     if (result) {
       if (typeof result === 'object') {

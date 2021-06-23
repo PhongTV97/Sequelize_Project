@@ -1,13 +1,14 @@
 import express from 'express';
 let router = express.Router();
 import { login, createAccount, getAccessToken } from '../controller/authenController.js';
-import { getListProduct } from '../controller/productController.js';
+import { getListProduct, onAddProduct, onRemoveProduct, onUpdateProduct } from '../controller/productController.js';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config();
 
 //always check
 router.use((req, res, next) => {
+  console.log("api");
   const apiLogin = ['/login', '/create-account', '/get-access-token'];
   const index = apiLogin.findIndex((item) => item === req.url);
   if (index === -1) {
@@ -31,7 +32,10 @@ router.use((req, res, next) => {
 
 router.post('/login', login);
 router.post('/create-account', createAccount);
-router.get('/products', getListProduct);
 router.get('/get-access-token', getAccessToken);
+router.get('/products', getListProduct);
+router.post('/add-products', onAddProduct);
+router.put('/products', onUpdateProduct);
+router.delete('/products', onRemoveProduct);
 
 export default router;
