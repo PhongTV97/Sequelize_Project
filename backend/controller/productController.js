@@ -11,11 +11,8 @@ export const getListProduct = async (req, res) => {
       },
     });
   } catch (error) {
-    console.log('error', error);
-    return res.json({
-      result: false,
-      message: 'Da co loi xay ra',
-    });
+    console.log(error);
+    res.status(500).json({ err: 'Something went wrong!' });
   }
 };
 
@@ -28,11 +25,8 @@ export const onAddProduct = async (req, res) => {
       result: true,
     });
   } catch (error) {
-    console.log('error', error);
-    return res.json({
-      result: false,
-      message: 'Da co loi xay ra',
-    });
+    console.log(error);
+    res.status(500).json({ err: 'Something went wrong!' });
   }
 };
 
@@ -45,11 +39,8 @@ export const onUpdateProduct = async (req, res) => {
       result: true,
     });
   } catch (error) {
-    console.log('error', error);
-    return res.json({
-      result: false,
-      message: 'Da co loi xay ra',
-    });
+    console.log(error);
+    res.status(500).json({ err: 'Something went wrong!' });
   }
 };
 
@@ -62,10 +53,7 @@ export const onRemoveProduct = async (req, res) => {
       result: true,
     });
   } catch (error) {
-    console.log('error', error);
-    return res.json({
-      result: false,
-      message: 'Da co loi xay ra',
-    });
+    console.log(error);
+    res.status(500).json({ err: 'Something went wrong!' });
   }
 };

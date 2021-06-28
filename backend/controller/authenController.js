@@ -20,23 +20,20 @@ export const login = async (req, res) => {
         message: reqult.message,
       });
   } catch (error) {
-    console.log('error', error);
-    return res.json({
-      result: false,
-      message: 'Da co loi xay ra',
-    });
+    console.log(error);
+    res.status(500).json({ err: 'Something went wrong!' });
   }
 };
 
 export const createAccount = async (req, res) => {
   try {
-    console.log("controller");
+    console.log('controller');
     const email = req.body.email;
     const password = md5(req.body.password);
     const role = req.body.role;
-    console.log("email", email);
-    console.log("password", password);
-    console.log("role", role);
+    console.log('email', email);
+    console.log('password', password);
+    console.log('role', role);
     const result = await createAccService(email, password, role);
     if (result) {
       if (typeof result === 'object') {
@@ -52,11 +49,8 @@ export const createAccount = async (req, res) => {
       throw Error();
     }
   } catch (error) {
-    console.log('error', error);
-    return res.json({
-      result: false,
-      message: 'Da co loi xay ra',
-    });
+    console.log(error);
+    res.status(500).json({ err: 'Something went wrong!' });
   }
 };
 
@@ -81,10 +75,7 @@ export const getAccessToken = async (req, res) => {
         });
     }
   } catch (error) {
-    console.log('error', error);
-    return res.json({
-      result: false,
-      message: 'Da co loi xay ra',
-    });
+    console.log(error);
+    res.status(500).json({ err: 'Something went wrong!' });
   }
 };
