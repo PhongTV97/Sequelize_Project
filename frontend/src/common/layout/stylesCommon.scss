@@ -1,0 +1,26 @@
+$colorBase: #388E3C;
+$white: #fff;
+$grey-border: #E6E7E9;
+
+.root-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+}
+
+.body-container{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-content {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1440px;
+    }
+}

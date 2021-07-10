@@ -1,0 +1,49 @@
+@import "../../common/layout/stylesCommon.scss";
+
+.footer-container {
+    height:  68px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid $grey-border;
+
+    &-content{
+        min-width: 1440px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 140%;
+            margin-left: 160px;
+        }
+
+        .lst-options-item {
+            flex: 1;
+            
+            ul {
+                display: flex;
+                flex-direction: row;
+                margin-right: 160px;
+
+                li {
+                    margin-left: 25px;
+                    color: $colorBase;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 140%;
+
+                    &:first-child{
+                        list-style-type: none;
+                    }
+                }
+            }
+        }
+    }
+}
