@@ -17,7 +17,7 @@ export const login = async (req, res) => {
     else
       return res.json({
         result: false,
-        message: reqult.message,
+        message: result.message,
       });
   } catch (error) {
     console.log(error);

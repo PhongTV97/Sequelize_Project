@@ -2,11 +2,32 @@ import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 
-const headers = {
-  'Access-Control-Allow-Origin': '*',
-  'Content-Type': 'application/json',
-}
+// Add a request interceptor
+axios.interceptors.request.use(function (config) {
+  // Do something before request is sent
+  config.headers['Access-Control-Allow-Origin'] = '*';
+  config.headers['Content-Type'] = 'application/json';
+  return config;
+}, function (error) {
+  // Do something with request error
+  return Promise.reject(error);
+});
+
+// Add a response interceptor
+axios.interceptors.response.use(function (response) {
+  // Any status code that lie within the range of 2xx cause this function to trigger
+  // Do something with response data
+  return response;
+}, function (error) {
+  // Any status codes that falls outside the range of 2xx cause this function to trigger
+  // Do something with response error
+  return Promise.reject(error);
+});
 
 export const createAccount = async (body) => {
-  return await axios.post(process.env.REACT_APP_URL_API + '/create-account', body, {headers} );
+  return await axios.post(process.env.REACT_APP_URL_API + '/create-account', body );
+};
+
+export const login = async (body) => {
+  return await axios.post(process.env.REACT_APP_URL_API + '/login', body );
 };
