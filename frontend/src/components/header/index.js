@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 const LIST_ITEM_NAV = [
   {
     image: IMAGE_PATH.BAR_CHART,
-    label: "Công ty vận hành",
+    label: "Nhà phân phối",
   },
   {
     image: IMAGE_PATH.CAMPAIGN,
@@ -18,7 +18,7 @@ const LIST_ITEM_NAV = [
   },
   {
     image: IMAGE_PATH.LOCAL_PHONE,
-    label: "Bulletin Board",
+    label: "Giỏ hàng",
   },
 ];
 
@@ -43,7 +43,7 @@ const Header = () => {
     <div className="header-container">
       <div className="header-content">
         <div className="header-content-left">
-          <img src={IMAGE_PATH.LOGO} alt="" />
+          <img style={{ marginTop: 5 }} src={IMAGE_PATH.LOGO} alt="" />
           <div className="items-nav-container">
             {LIST_ITEM_NAV.map((item, index) => (
               <div className="item-nav" key={index}>

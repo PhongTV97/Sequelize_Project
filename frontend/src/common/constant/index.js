@@ -6,7 +6,7 @@ export const NAME_SCREEN = {
 
 export const IMAGE_PATH = {
   BAR_CHART: "./images/bar_chart.png",
-  LOGO: "./images/logo.png",
+  LOGO: "./images/logo1.png",
   CAMPAIGN: "./images/campaign-outline.png",
   DESCRIPTION: "./images/local_phone-outline.png",
   LOCAL_PHONE: "./images/description-outline.png",
