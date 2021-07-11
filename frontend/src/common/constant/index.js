@@ -10,4 +10,5 @@ export const IMAGE_PATH = {
   CAMPAIGN: "./images/campaign-outline.png",
   DESCRIPTION: "./images/local_phone-outline.png",
   LOCAL_PHONE: "./images/description-outline.png",
+  BG_IMAGE: "./images/background_toppage.png",
 };

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.scss";
 import { IMAGE_PATH } from "../../common/constant";
+import { useHistory } from "react-router-dom";
 
 const LIST_ITEM_NAV = [
   {
@@ -22,6 +23,22 @@ const LIST_ITEM_NAV = [
 ];
 
 const Header = () => {
+  let history = useHistory();
+
+  const [path, setPath] = useState("/");
+
+  const handleChangePage = (path) => {
+    setPath(path);
+    history.push(path);
+  };
+
+  const generateClass = (pathClick) => {
+    if (pathClick === path) {
+      return "btn btn-active";
+    }
+    return "btn";
+  };
+
   return (
     <div className="header-container">
       <div className="header-content">
@@ -37,8 +54,18 @@ const Header = () => {
           </div>
         </div>
         <div className="header-content-right">
-          <button className="btn">Đăng nhập</button>
-          <button className="btn btn-active">Đăng ký</button>
+          <button
+            onClick={() => handleChangePage("/login")}
+            className={generateClass("/login")}
+          >
+            Đăng nhập
+          </button>
+          <button
+            onClick={() => handleChangePage("/")}
+            className={generateClass("/")}
+          >
+            Đăng ký
+          </button>
         </div>
       </div>
     </div>

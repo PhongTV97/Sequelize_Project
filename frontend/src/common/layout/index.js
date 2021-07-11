@@ -7,7 +7,9 @@ const RootLayout = ({ children }) => {
   return (
     <div className="root-container">
       <Header />
-      <div className="body-container">{children}</div>
+      <div className="body-container">
+        <div className="body-container-content">{children}</div>
+      </div>
       <Footer />
     </div>
   );

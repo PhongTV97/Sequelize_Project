@@ -1,0 +1,21 @@
+.home-container{
+    width: 1440px;
+    height: 100%;
+
+    .add-product {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+
+        .btn {
+            background-color: #43A047;
+            color: white;
+            height: 45px;
+            font-weight: 500;
+            border-radius: 5px;
+        }
+    }
+}
