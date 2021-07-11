@@ -8,14 +8,14 @@ export const login = async (req, res) => {
     const password = md5(req.body.password);
     const result = await loginService(email, password);
     if (result && !result.message)
-      return res.json({
+      return res.status(200).json({
         result: true,
         data: {
           ...result,
         },
       });
     else
-      return res.json({
+      return res.status(200).json({
         result: false,
         message: result.message,
       });
@@ -37,12 +37,12 @@ export const createAccount = async (req, res) => {
     const result = await createAccService(email, password, role);
     if (result) {
       if (typeof result === 'object') {
-        return res.json({
+        return res.status(200).json({
           result: false,
           message: result.message,
         });
       }
-      return res.json({
+      return res.status(200).json({
         result: true,
       });
     } else {
@@ -62,13 +62,13 @@ export const getAccessToken = async (req, res) => {
       const decoded = jwt.verify(refreshToken, process.env.PRIVATE_KEY_GENERATE_REFRESH_TOKEN);
       const access_token = await generateAccessToken(decoded.email);
       if (!access_token) throw Error();
-      return res.json({
+      return res.status(200).json({
         result: true,
         access_token,
       });
     } catch (err) {
       if (err.message === 'jwt expired')
-        return res.json({
+        return res.status(200).json({
           result: false,
           message: 'Refresh Token Het Han',
           code: 'E015',

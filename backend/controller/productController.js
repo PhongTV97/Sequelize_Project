@@ -4,7 +4,7 @@ export const getListProduct = async (req, res) => {
   try {
     const listProducts = await getAllProduct(req.email);
     if (!listProducts) throw Error();
-    return res.json({
+    return res.status(200).json({
       result: true,
       data: {
         listProducts,
@@ -21,7 +21,7 @@ export const onAddProduct = async (req, res) => {
     const body = {};
     const result = await addProduct(body);
     if (!result) throw Error();
-    return res.json({
+    return res.status(200).json({
       result: true,
     });
   } catch (error) {
@@ -35,7 +35,7 @@ export const onUpdateProduct = async (req, res) => {
     const body = {};
     const result = await updateProduct(body);
     if (!result) throw Error();
-    return res.json({
+    return res.status(200).json({
       result: true,
     });
   } catch (error) {
@@ -49,7 +49,7 @@ export const onRemoveProduct = async (req, res) => {
     const id = 1;
     const result = await removeProduct(id);
     if (!result) throw Error();
-    return res.json({
+    return res.status(200).json({
       result: true,
     });
   } catch (error) {

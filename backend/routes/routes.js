@@ -20,7 +20,7 @@ router.use((req, res, next) => {
       next();
     } catch (err) {
       if (err.message === 'jwt expired')
-        return res.json({
+        return res.status(500).json({
           result: false,
           message: 'Token Het Han',
           code: 'E014',

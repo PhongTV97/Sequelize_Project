@@ -29,8 +29,12 @@ const Products = database.define('products', {
     type: Sequelize.STRING,
     allowNull: true,
   },
-  expiry_date: {
+  expire_date: {
     type: Sequelize.DATE,
+    allowNull: false,
+  },
+  price: {
+    type: Sequelize.NUMBER,
     allowNull: false,
   },
   status: {
