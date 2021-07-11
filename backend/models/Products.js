@@ -34,7 +34,7 @@ const Products = database.define('products', {
     allowNull: false,
   },
   price: {
-    type: Sequelize.NUMBER,
+    type: Sequelize.INTEGER,
     allowNull: false,
   },
   status: {

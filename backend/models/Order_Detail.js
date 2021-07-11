@@ -1,10 +1,9 @@
 import Sequelize from 'sequelize';
 import database from '../database/db.js';
+import Orders from './Orders.js';
+import Products from './Products.js';
 
-import Employees from './Employees.js';
-import Customers from './Customers.js';
-
-const Orders = database.define('orders', {
+const OrdersDetail = database.define('order_detail', {
   id: {
     // Sequelize module has INTEGER Data_Type.
     type: Sequelize.INTEGER,
@@ -15,29 +14,21 @@ const Orders = database.define('orders', {
     // For uniquely identify user.
     primaryKey: true,
   },
-  customer_id: {
+  product_id: {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-  employee_id: {
+  order_id: {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-  order_date: {
-    type: Sequelize.DATE,
-    allowNull: false,
-  },
-  total_asset: {
+  number_of_product: {
     type: Sequelize.INTEGER,
-    allowNull: false,
-  },
-  ship_to_address: {
-    type: Sequelize.STRING,
     allowNull: false,
   },
 });
 
-Orders.belongsTo(Customers, { foreignKey: 'customer_id' });
-Orders.belongsTo(Employees, { foreignKey: 'employee_id' });
+OrdersDetail.belongsTo(Orders, { foreignKey: 'order_id' });
+OrdersDetail.hasMany(Products, { foreignKey: 'product_id' });
 
-export default Orders;
+export default OrdersDetail;
