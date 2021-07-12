@@ -13,7 +13,8 @@ const RouterApp = () => {
         <Route path="/" component={CreateAccScreen} exact />
         <Route path={NAME_SCREEN.LOGIN} component={LoginScreen} />
         <Route path={NAME_SCREEN.CREATE_ACC} component={CreateAccScreen} />
-        <Route path={NAME_SCREEN.HOME} component={HomeScreen} />
+        <Route path={NAME_SCREEN.HOME_CUSTOMER} component={HomeScreen} />
+        <Route path={NAME_SCREEN.HOME_ADMIN} component={HomeScreen} />
       </RootLayout>
     </Router>
   );

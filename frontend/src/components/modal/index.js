@@ -1,20 +1,20 @@
 import React from "react";
 import { Modal } from "antd";
 
-const Dialog = ({ isModalVisible, handleOk, handleCancel }) => {
+const Dialog = ({ isModalVisible, handleOk, handleCancel, children }) => {
   return (
-    <>
-      <Modal
-        title="Basic Modal"
-        visible={isModalVisible}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
-    </>
+    <Modal
+      visible={isModalVisible}
+      onOk={handleOk}
+      onCancel={handleCancel}
+      width={700}
+      // maskClosable={false}
+      forceRender={false}
+      closable={false}
+      footer={null}
+    >
+      {children}
+    </Modal>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles.scss";
 import { IMAGE_PATH } from "../../common/constant";
 import { useHistory } from "react-router-dom";
+import Logo from "../../assets/images/logo2.png";
 
 const LIST_ITEM_NAV = [
   {
@@ -13,11 +14,11 @@ const LIST_ITEM_NAV = [
     label: "Thông báo",
   },
   {
-    image: IMAGE_PATH.DESCRIPTION,
+    image: IMAGE_PATH.LOCAL_PHONE,
     label: "Liên hệ",
   },
   {
-    image: IMAGE_PATH.LOCAL_PHONE,
+    image: IMAGE_PATH.DESCRIPTION,
     label: "Giỏ hàng",
   },
 ];
@@ -43,7 +44,9 @@ const Header = () => {
     <div className="header-container">
       <div className="header-content">
         <div className="header-content-left">
-          <img style={{ marginTop: 5 }} src={IMAGE_PATH.LOGO} alt="" />
+          <a href="/home">
+            <img src={Logo} alt="" />
+          </a>
           <div className="items-nav-container">
             {LIST_ITEM_NAV.map((item, index) => (
               <div className="item-nav" key={index}>

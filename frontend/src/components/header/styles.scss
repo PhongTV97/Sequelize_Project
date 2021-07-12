@@ -1,92 +1,90 @@
 @import "../../common//layout/stylesCommon.scss";
 
-.header-container  {
-    background-color: $colorBase;
-    height: 64px;
+.header-container {
+  background-color: $colorBase;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 160px;
+  color: $white;
+  overflow: hidden;
+
+  .header-content {
+    height: 100%;
+    min-width: 1440px;
+    flex-direction: row;
+    justify-content: space-between;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 160px;
-    color: $white;
-    overflow: hidden;
 
-    .header-content {
-        height: 100%;
-        min-width:1440px;
-        flex-direction: row;
-        justify-content: space-between;
-        display: flex;
-
-        &-left {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-left: 160px;
-        }
-
-        &-right {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-right: 160px;
-           
-            .btn {
-                font-style: normal;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 140%;
-                border: none;
-                background-color: transparent;
-                color: $white;
-                cursor: pointer;
-                justify-content: center;
-                align-items: center;
-                padding: 11px 12px;
-                border: none;
-                box-sizing: border-box;
-                border-radius: 4px;
-            }
-
-            .btn-active {
-                border: 1px solid rgba(255, 255, 255, 0.7);
-            }
-        }
-
-        img {
-            width: 150px;
-            height: 120px;
-        }
-
-        .items-nav-container{
-            display: flex;
-            flex-direction: row;
-
-            img {
-                width: 24px;
-                height: 24px;
-            }
-
-            span {
-                font-style: normal;
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 140%;
-                margin-left: 8px;
-                cursor: pointer;
-            }
-
-            .item-nav {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                margin-left: 24px;
-
-                &:first-child {
-                    margin-left: 91px;
-                }
-            }
-        }
+    &-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 160px;
     }
 
+    &-right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 160px;
+
+      .btn {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 140%;
+        border: none;
+        background-color: transparent;
+        color: $white;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        padding: 11px 12px;
+        border: none;
+        box-sizing: border-box;
+        border-radius: 4px;
+      }
+
+      .btn-active {
+        border: 1px solid rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .items-nav-container {
+      display: flex;
+      flex-direction: row;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      span {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        margin-left: 8px;
+        cursor: pointer;
+      }
+
+      .item-nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 24px;
+
+        &:first-child {
+          margin-left: 91px;
+        }
+      }
+    }
+  }
 }
- 
