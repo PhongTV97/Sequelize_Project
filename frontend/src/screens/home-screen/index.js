@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.scss";
-import Products from "../employees/products-screen";
+import Products from "../admin/products-screen";
 
 const HomeScreen = () => {
   return (

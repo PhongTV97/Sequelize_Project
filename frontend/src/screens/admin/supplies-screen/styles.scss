@@ -1,0 +1,25 @@
+.display-none {
+  display: none;
+}
+
+.home-container {
+  width: 1440px;
+  height: 100%;
+
+  .add-product {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+
+    .btn {
+      background-color: #34a8eb;
+      color: white;
+      height: 45px;
+      font-weight: 500;
+      border-radius: 5px;
+    }
+  }
+}

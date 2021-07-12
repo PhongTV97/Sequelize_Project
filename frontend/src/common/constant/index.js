@@ -8,7 +8,11 @@ import Description from "../../assets/images/description-outline.png";
 export const NAME_SCREEN = {
   LOGIN: "/login",
   CREATE_ACC: "/create-acc",
-  HOME_ADMIN: "/admin/home",
+  //admin
+  ADMIN_PRODUCT: "/admin/product",
+  ADMIN_SUPPLICES: "/admin/supplies",
+
+  //user
   HOME_CUSTOMER: "/home",
 };
 

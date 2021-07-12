@@ -8,14 +8,17 @@ const LIST_ITEM_NAV = [
   {
     image: IMAGE_PATH.BAR_CHART,
     label: "Nhà phân phối",
+    path: "/admin/supplies",
   },
   {
     image: IMAGE_PATH.CAMPAIGN,
-    label: "Thông báo",
+    label: "Nhân viên",
+    path: "/admin/employee",
   },
   {
     image: IMAGE_PATH.LOCAL_PHONE,
-    label: "Liên hệ",
+    label: "Sản phẩm",
+    path: "/admin/product",
   },
   {
     image: IMAGE_PATH.DESCRIPTION,
@@ -49,7 +52,11 @@ const Header = () => {
           </a>
           <div className="items-nav-container">
             {LIST_ITEM_NAV.map((item, index) => (
-              <div className="item-nav" key={index}>
+              <div
+                className="item-nav"
+                key={index}
+                onClick={() => history.push(item.path || "/")}
+              >
                 <img src={item.image} alt="" />
                 <span>{item.label}</span>
               </div>
@@ -57,6 +64,9 @@ const Header = () => {
           </div>
         </div>
         <div className="header-content-right">
+          <button onClick={() => handleChangePage("/login")} className={"btn"}>
+            Đăng xuất
+          </button>
           <button
             onClick={() => handleChangePage("/login")}
             className={generateClass("/login")}
